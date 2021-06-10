@@ -9,8 +9,6 @@ services:
       - MYSQL_PASSWORD=password
       - MYSQL_USER=catalogo-user
       - MYSQL_DATABASE=catalogodb
-    ports:
-      - 6603:3306
     container_name: catalogodb
   product-ms:
     build:

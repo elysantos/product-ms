@@ -35,7 +35,7 @@ docker compose up
 A documentação de api foi criada com o Open Api que pode ser 
 acessada após a execução do projeto no link: 
 ```
-http://localhost:9999/swagger-ui/index.html
+http://localhost:9999/swagger-ui.html
 ```
 
 ## Testes
