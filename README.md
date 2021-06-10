@@ -1,4 +1,5 @@
 # product ms
+[![Build Status](https://travis-ci.com/elysantos/product-ms.svg?branch=master)](https://travis-ci.com/elysantos/product-ms)
 
 Tabela de conteúdos
 =================

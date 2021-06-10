@@ -5,6 +5,8 @@ services:
     image: mysql:8
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    networks:
+      - catalogo-network
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=catalogodb
@@ -16,9 +18,13 @@ services:
       context: ./
       dockerfile: Dockerfile
     container_name: product-ms
+    networks:
+      - catalogo-network
     depends_on:
       - catalogodb
     ports:
       - 9999:9999
     links:
       - catalogodb
+networks:
+  catalogo-network:

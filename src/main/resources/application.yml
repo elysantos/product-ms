@@ -38,7 +38,7 @@ spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     password: senha
-    url: jdbc:mysql://localhost:33063/catalogobootdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://catalogodb:33063/catalogobootdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
     username: root
   h2:
     console:
