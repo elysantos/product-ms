@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev
+  output:
+    ansi:
+      enabled: always # Habilitar o log colorido
+server:
+  port: 9999
+springdoc:
+  api-docs:
+    path: api-docs
+  version: @version@
+mybatis:
+  type-aliases-package: com.elysantos.productms.model
+  type-handlers-package: com.elysantos.productms.mapper.typehandler
+  mapper-locations: classpath*:**/mappers/*Mapper.xml
+---
+# Configurações de Desenvolvimento
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:test
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /console
+---
+# Configurações de Produção
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    password: senha
+    url: jdbc:mysql://localhost:33063/catalogobootdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    username: root
+  h2:
+    console:
+      enabled: true
+      path: /console

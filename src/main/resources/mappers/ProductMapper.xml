@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.elysantos.productms.mapper.ProductMapper">
+    <insert id="insert">
+        insert into products(id, name, description, price)
+        values ('${product.id}', '${product.name}', '${product.description}', ${product.price})
+    </insert>
+
+    <update id="update">
+        update products set
+                            name = '${product.name}',
+                            description = '${product.description}',
+                            price = ${product.price}
+        where id = '${id}'
+    </update>
+
+    <delete id="delete">
+        delete from products where id  = '${id}'
+    </delete>
+
+    <select id="findAll" resultType="com.elysantos.productms.model.Product">
+        select * from products
+    </select>
+
+    <select id="findById" resultType="com.elysantos.productms.model.Product">
+        select * from products where id = '${id}'
+    </select>
+
+    <select id="findByParams" resultType="com.elysantos.productms.model.Product">
+        select * from products where 1 = 1
+        <if test="q != null">
+            AND (name LIKE '${name}' OR description LIKE '${name}')
+        </if>
+        <if test="minPrice != null">
+            AND price > ${minPrice}
+        </if>
+        <if test="maxPrice != null">
+            <![CDATA[
+                AND price <= ${maxPrice}
+                ]]>
+
+        </if>
+    </select>
+</mapper>

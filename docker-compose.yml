@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  catalogodb:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=catalogodb
+    ports:
+      - 33063:3306
+    container_name: catalogodb
+  product-ms:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: product-ms
+    depends_on:
+      - catalogodb
+    ports:
+      - 9999:9999
+    links:
+      - catalogodb
