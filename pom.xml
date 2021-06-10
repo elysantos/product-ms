@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.elysantos</groupId>
     <artifactId>product-ms</artifactId>
-    <version>0.1.9</version>
+    <version>0.1.11</version>
     <name>product-ms</name>
     <description>Serviço de catálogo de produtos</description>
     <properties>

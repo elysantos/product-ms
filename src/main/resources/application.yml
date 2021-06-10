@@ -37,9 +37,9 @@ spring:
       on-profile: prod
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    password: senha
-    url: jdbc:mysql://catalogodb:33063/catalogobootdb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
-    username: root
+    username: catalogo-user
+    password: password
+    url: jdbc:mysql://localhost:6603/catalogodb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
   h2:
     console:
       enabled: true
