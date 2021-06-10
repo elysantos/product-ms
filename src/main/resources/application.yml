@@ -39,7 +39,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     username: catalogo-user
     password: password
-    url: jdbc:mysql://localhost:6603/catalogodb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://catalogodb:3306/catalogodb?createDatabaseIfNotExist=true&autoReconnect=true&useSSL=false
   h2:
     console:
       enabled: true

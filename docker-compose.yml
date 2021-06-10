@@ -28,5 +28,3 @@ services:
       - DATABASE_PASSWORD=password
       - DATABASE_NAME=catalogodb
       - DATABASE_PORT=6603
-#    links:
-#      - catalogodb
