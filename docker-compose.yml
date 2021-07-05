@@ -2,14 +2,7 @@ version: '3'
 
 services:
   catalogodb:
-    image: mysql:5.7
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_PASSWORD=password
-      - MYSQL_USER=catalogo-user
-      - MYSQL_DATABASE=catalogodb
-    container_name: catalogodb
+    image: mongo:3.4
   product-ms:
     build:
       context: ./
@@ -19,10 +12,4 @@ services:
     depends_on:
       - catalogodb
     ports:
-      - 9999:9999
-    environment:
-      - DATABASE_HOST=catalogodb
-      - DATABASE_USER=catalogo-user
-      - DATABASE_PASSWORD=password
-      - DATABASE_NAME=catalogodb
-      - DATABASE_PORT=6603
+      - 9999:8080

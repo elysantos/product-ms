@@ -13,11 +13,11 @@ public interface IProductService {
 
     List<Product> findAll();
 
-    Product update(String id, ProductRequestDTO product) throws ProductInvalidException;
+    Product update(String id, ProductRequestDTO product);
 
-    Product findOne(String id) throws ProductInvalidException;
+    Product findOne(String id);
 
     List<Product> findByParams(String q, BigDecimal minPrice, BigDecimal maxPrice);
 
-    Product delete(String id) throws ProductInvalidException;
+    Product delete(String id);
 }

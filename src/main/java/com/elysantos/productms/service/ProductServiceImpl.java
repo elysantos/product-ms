@@ -34,7 +34,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public Product update(String id, ProductRequestDTO product) throws ProductInvalidException {
+    public Product update(String id, ProductRequestDTO product)  {
         Product productFound = findOne(id);
 
         productFound.setName(product.name);
@@ -46,7 +46,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public Product findOne(String id) throws ProductInvalidException {
+    public Product findOne(String id)  {
         Product product = productMapper.findById(id);
         if(product == null){
             throw new ProductInvalidException("Produto com id fornecido não encontrado");
@@ -60,7 +60,7 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public Product delete(String id) throws ProductInvalidException {
+    public Product delete(String id)  {
         Product productFound = findOne(id);
         productMapper.delete(id);
         return productFound;

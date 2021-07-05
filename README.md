@@ -48,3 +48,4 @@ endpoints e das respostas esperadas.
 * H2 Database - Banco em memória para testes e desenvolvimento
 * Open Api - Geração de documentação dos endpoints com ui
 * Docker - Criar conteiner com ambiente controlado para execução da aplicação
+* MongoDB - banco de dados nosql
